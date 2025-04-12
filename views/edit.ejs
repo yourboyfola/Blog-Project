@@ -4,7 +4,7 @@
 
 <form action="/posts/edit" method="POST" class="post-form">
   <label>Title:</label>
-  <!-- Use MongoDB's _id for the hidden field -->
+
   <input type="hidden" name="id" value="<%= post._id %>">
   <input type="text" name="title" required value="<%= post.title %>">
 

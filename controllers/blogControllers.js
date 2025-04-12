@@ -19,7 +19,7 @@ export function blogShit(app) {
 
     app.get('/', async (req, res) => {
         try {
-          const posts = await BlogPost.find(); // Fetch all posts from the database
+          const posts = await BlogPost.find(); 
           res.render('index', { posts });
         } catch (error) {
           console.log('❌ Error:', error);
@@ -29,7 +29,7 @@ export function blogShit(app) {
 
       app.get('/new', async (req, res) => {
         try {
-          res.render('new'); // No need to fetch posts here, just show the form
+          res.render('new'); 
         } catch (error) {
           console.log('❌ Error:', error);
           res.status(500).send("Error detected");
@@ -38,7 +38,7 @@ export function blogShit(app) {
     
       app.get('/posts/:id', async (req, res) => {
         try {
-          const post = await BlogPost.findById(req.params.id); // Find the post by ID
+          const post = await BlogPost.findById(req.params.id); 
           if (post) {
             res.render('show', { post });
           } else {
@@ -55,7 +55,7 @@ export function blogShit(app) {
 
             console.log(req.body);
 
-          const { title, content } = req.body;  // Get data from form
+          const { title, content } = req.body;  
           if (!title || !content) {
             return res.status(400).json({ message: 'Title and content are required' });
           }
@@ -63,11 +63,11 @@ export function blogShit(app) {
           const newPost = new BlogPost({
             title,
             content,
-            date: new Date().toLocaleDateString(), // Set the date of the post
+            date: new Date().toLocaleDateString(), 
           });
       
-          await newPost.save();  // Save post to DB
-          res.redirect('/');  // Redirect back to home page (or send JSON response if needed)
+          await newPost.save();  
+          res.redirect('/');  
         } catch (err) {
           res.status(500).json({ message: err.message });
         }
@@ -82,9 +82,9 @@ export function blogShit(app) {
             {
               title: req.body.title,
               content: req.body.content,
-              date: new Date().toLocaleDateString(), // Optional
+              date: new Date().toLocaleDateString(), 
             },
-            { new: true } // This returns the updated document
+            { new: true } 
           );
       
           if (updatedPost) {
@@ -122,5 +122,4 @@ app.get('/posts/:id/edit', async (req, res) => {
     }
   });
   
-
 }; 
