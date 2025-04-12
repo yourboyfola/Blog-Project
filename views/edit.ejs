@@ -1,0 +1,17 @@
+<%- include("partials/header", { title: "Edit Post" }) %>
+
+<h2>Edit Current Post</h2>
+
+<form action="/posts/edit" method="POST" class="post-form">
+  <label>Title:</label>
+  <!-- Use MongoDB's _id for the hidden field -->
+  <input type="hidden" name="id" value="<%= post._id %>">
+  <input type="text" name="title" required value="<%= post.title %>">
+
+  <label>Content:</label>
+  <textarea name="content" rows="6" required><%= post.content %></textarea>
+
+  <button type="submit">Publish Edit</button>
+</form>
+
+<%- include("partials/footer") %>

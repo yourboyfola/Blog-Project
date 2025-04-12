@@ -1,0 +1,29 @@
+<%- include("partials/header", { title: "Home" }) %>
+
+<a href="/new" class="btn">+ New Post</a>
+
+<h2>All Posts</h2>
+
+<% if (posts.length === 0) { %>
+  <p>No posts yet.</p>
+<% } else { %>
+  <ul class="post-list">
+    <% posts.forEach(post => { %>
+      <li class="post-card">
+        <h3><%= post.title %></h3>
+        <p><%= post.content.substring(0, 100) %>...</p>
+        <small><%= new Date(post.date).toLocaleDateString() %></small>
+        <br>
+
+        <!-- Action Buttons -->
+        <a href="/posts/<%= post._id %>" class="action-link">Read more</a>
+        <a href="/posts/<%= post._id %>/edit" class="action-link">Edit</a>
+        <form action="/posts/<%= post._id %>?_method=DELETE" method="POST" style="display:inline;">
+          <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>
+
+<%- include("partials/footer") %>

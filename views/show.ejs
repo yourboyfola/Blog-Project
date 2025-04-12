@@ -1,0 +1,11 @@
+<%- include("partials/header", { title: post.title }) %>
+
+<article class="post">
+  <h2><%= post.title %></h2>
+  <p><%= post.content %></p>
+  <small><%= post.date.toLocaleDateString() %></small> <!-- Date formatting for better readability -->
+</article>
+
+<a href="/" class="action-link">← Back to Home</a>
+
+<%- include("partials/footer") %>

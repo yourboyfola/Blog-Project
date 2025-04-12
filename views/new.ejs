@@ -1,0 +1,17 @@
+<%- include("partials/header", { title: "New Post" }) %>
+
+<h2>Create a New Post</h2>
+
+<form action="/posts" method="POST" class="post-form">
+  <label>Title:</label>
+  <input type="text" name="title" required>  <!-- title will be in req.body.title -->
+
+  <label>Content:</label>
+  <textarea name="content" rows="6" required></textarea>  <!-- content will be in req.body.content -->
+
+  <button type="submit">Publish</button>
+</form>
+
+
+<%- include("partials/footer") %>
+

@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background: #222;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .post-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .post-card {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #0077cc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .post-form {
+    background: white;
+    padding: 1rem;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  input[type="text"], textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 0.6rem 1.2rem;
+    background: #0077cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #005fa3;
+  }
+  
+  .post-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .post-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 5px solid #0077cc;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .post-card:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .post-card h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #333;
+  }
+  
+  .post-card p {
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .post-card small {
+    color: #999;
+    font-size: 0.9rem;
+  }
+  
+  .action-link {
+    display: inline-block;
+    background-color: #0077cc;
+    color: white;
+    padding: 0.4rem 1rem;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 20px; /* this makes it oval */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background 0.2s ease;
+  }
+  
+  .action-link:hover {
+    background-color: #005fa3;
+  }
+  
+  .post-card form button {
+    background-color: #cc0000;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s ease;
+  }
+  
+  .post-card form button:hover {
+    background-color: #990000;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: background 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: #218838;
+  }
+  
