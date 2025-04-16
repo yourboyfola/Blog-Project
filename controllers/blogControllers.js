@@ -17,15 +17,20 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 export function blogShit(app) {
 
-    app.get('/', async (req, res) => {
-        try {
-          const posts = await BlogPost.find(); 
-          res.render('index', { posts });
-        } catch (error) {
-          console.log('❌ Error:', error);
-          res.status(500).send("Error detected");
-        }
-      });
+  app.get('/', async (req, res) => {
+    if (!req.session.userId) {
+      return res.redirect('/login'); 
+    }
+  
+    try {
+      const posts = await BlogPost.find();
+      res.render('index', { posts });
+    } catch (error) {
+      console.log('❌ Error:', error);
+      res.status(500).send("Error detected");
+    }
+  });
+  
 
       app.get('/new', async (req, res) => {
         try {
